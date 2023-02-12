@@ -28,6 +28,16 @@
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
+/* ----Dark Theme Variables---- */
+.dark-theme-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -404,6 +414,12 @@ main .recent a{
     gap: 1rem;
 }
 
+.right-side .top .top-icons{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
 .right-side .alert .notification{
     position: relative;
 }
@@ -448,7 +464,7 @@ main .recent a{
     justify-content: space-between;
     align-items: center;
     height: 1.6rem;
-    width: 4.2rem;
+    width: 7.2rem;
     cursor: pointer;
     border-radius: var(--border-radius-1);
 }
@@ -549,6 +565,11 @@ main .recent a{
     justify-content: center;
 }
 
+.right-side .top-students .add-points:hover{
+    background: var(--color-primary);
+    color: white;
+}
+
 .right-side .top-students .add-points div{
     display: flex;
     align-items: center;
@@ -568,6 +589,121 @@ footer{
     padding-bottom: 2rem;
 }
 
+
+/* ----------Login---------- */
+.containerL{
+    width: 96%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.containerL .logo{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.containerL .logo img{
+    width: 3.4rem;
+    height: 3.5rem;
+}
+
+.containerL .logo h2{
+    color: var(--color-secondary);
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 1rem;
+    width: 110px;
+}
+
+.loginContainer{
+    width: 450px;
+    margin: 5rem auto;
+    /* padding: 20px; */
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.loginContainer .top .colors{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.loginContainer .top .colors .colorsSize{
+    height: 144px;
+}
+
+.loginContainer .top .colors .green{
+    background: var(--color-secondary);
+    border-radius: 2rem 0 0 0;
+}
+
+.loginContainer .top .colors .yellow{
+    background: var(--color-thirtiary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginContainer .top .colors .blue{
+    background: var(--color-primary);
+    border-radius: 0 2rem 0 0;
+}
+
+.loginContainer .top .colors .yellow img{
+    width: 6.25rem;
+}
+
+.loginContainer .bottom{
+    padding: var(--card-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginContainer .bottom h2{
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.loginContainer .bottom form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: inherit;
+    color: inherit;
+}
+
+.loginContainer .bottom form .inputGroup{
+    height: 50px;
+    width: 95%;
+    display: flex;
+    background: #F4F3F6;
+    margin: 1rem 0;
+    border: 1px solid #E1E0EA;
+    border-bottom: 1px solid #383167;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 10px;
+}
+
+.loginContainer .bottom form .inputGroup span{
+    color: #949293;
+}
+
+.loginContainer .bottom form .inputGroup input{
+    width: 90%;
+    background: transparent;
+    font-size: 0.88rem;
+    color: var(--color-dark);
+
+}
 
 /* ---------Media querie--------- */
 /* ==========Tablets and smal laptops========== */
@@ -606,6 +742,7 @@ footer{
         left: 50%;
         transform: translate(-50%);
         margin: 20rem 0 0 8.8rem;
+        overflow-x: scroll;
     }
 
     main .recent table{
@@ -615,7 +752,7 @@ footer{
     footer{
         width: 100%;
         position: absolute;
-        top: 120rem;
+        bottom: 0;
     }
 }
 
@@ -629,7 +766,7 @@ footer{
 
     aside {
         position: fixed;
-        left: 0;
+        left: -100%;
         background-color: var(--color-white);
         width: 18rem;
         z-index: 3;
@@ -637,6 +774,13 @@ footer{
         height: 100vh;
         padding-right: var(--card-padding);
         display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+
+    @keyframes showMenu {
+        to{
+            left: 0;
+        }
     }
 
     aside .logo {
@@ -700,8 +844,8 @@ footer{
         box-shadow: 0 1rem 1rem var(--color-light);
     }
 
-    .right-side .top .theme-toggler{
-        width: 4.4rem;
+    .right-side .top .top-icons{
+        width: 14rem;
         position: absolute;
         left: 66%;
     }
@@ -710,9 +854,9 @@ footer{
         display: none;
     }
 
-    .right-side .alert{
+    /* .right-side .alert{
         margin-right: 4.5rem;
-    }
+    } */
 
     .right-side .top button{
         display: inline-block;
@@ -721,5 +865,9 @@ footer{
         color: var(--color-dark);
         position: absolute;
         left: 1rem;
+    }
+
+    .right-side .top button{
+        font-size: 2rem;
     }
 }
