@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View User</title>
+    <link rel="icon" type="image/x-icon" href="../img/pngwing 4.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/newstyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- ---------- Beginning of Aside ---------- -->
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="../img/logo.png" alt="Logo" />
+            <h2>NIGERIA Police College Ikeja</h2>
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-symbols-sharp">close</span>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <div class="menu">
+            <div class="item">
+              <a href="dashboard.html">
+                <span class="material-symbols-sharp"> grid_view </span>
+                <h3>Dashboard</h3>
+              </a>
+            </div>
+            <div class="item">
+              <a class="sub-btn active" href="#">
+                <span class="material-symbols-sharp"> group </span>
+                <h3>Users</h3>
+                <i class="fas fa-angle-right dropdown"></i>
+              </a>
+              <div class="sub-menu">
+                <a href="users.html" class="sub-item">User List</a>
+                <a href="view_user.html" class="sub-item">View Users</a>
+                <a href="add_user.html" class="sub-item">Add User</a>
+              </div>
+            </div>
+            <div class="item">
+              <a class="sub-btn" href="#">
+                <span class="material-symbols-sharp"> military_tech </span>
+                <h3>Platoon</h3>
+                <i class="fas fa-angle-right dropdown"></i>
+              </a>
+              <div class="sub-menu">
+                <a href="platoon_list" class="sub-item">Platoon List</a>
+                <a href="view_platoon" class="sub-item">View Platoon</a>
+                <a href="add_platoon.html" class="sub-item">Add Platoon</a>
+              </div>
+            </div>
+            <div class="item">
+              <a href="#">
+                <span class="material-symbols-sharp"> receipt_long </span>
+                <h3>Exam</h3>
+              </a>
+            </div>
+            <div class="item">
+              <a class="sub-btn" href="#">
+                <span class="material-symbols-sharp"> mail </span>
+                <h3>Message</h3>
+                <i class="fas fa-angle-right dropdown"></i>
+              </a>
+              <div class="sub-menu">
+                <a href="#" class="sub-item">Sub Item 01</a>
+                <a href="#" class="sub-item">Sub Item 02</a>
+                <a href="#" class="sub-item">Sub Item 03</a>
+                <a href="#" class="sub-item">Sub Item 04</a>
+              </div>
+            </div>
+            <div class="item">
+              <a href="#">
+                <span class="material-symbols-sharp"> tune </span>
+                <h3>Settings</h3>
+              </a>
+            </div>
+            <div class="item">
+              <a href="#">
+                <span class="material-symbols-sharp"> logout </span>
+                <h3>Logout</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- ---------- End of Aside ---------- -->
+
+      <!-- ---------- Beginning of Right Panel ---------- -->
+      <div class="rightPanel">
+        <!-- ---------- Beginning of Header Panel ---------- -->
+        <header>
+          <h1>Users</h1>
+          <div class="top">
+            <button id="menu-btn">
+              <span class="material-symbols-sharp"> menu </span>
+            </button>
+            <div class="top-icons">
+              <div class="alert">
+                <div class="notification">
+                  <span class="material-symbols-outlined">notifications</span>
+                  <div class="count">12</div>
+                </div>
+                <div class="mail-notification">
+                  <span class="material-symbols-outlined">mail</span>
+                  <div class="count">5</div>
+                </div>
+              </div>
+              <div class="theme-toggler">
+                <span class="material-symbols-sharp active">light_mode</span>
+                <span class="material-symbols-sharp">dark_mode</span>
+              </div>
+              <div class="profile">
+                <div class="info">
+                  <p>Hey, <b>Daniel</b></p>
+                  <small class="text-muted">Admin</small>
+                </div>
+                <div>
+                  <img
+                    class="profile-photo"
+                    src="../img/handsome-adult-male-posing2.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- ---------- End of Header Panel ---------- -->
+
+        <!-- ---------- Beginning of Main Panel ---------- -->
+        <main>
+          <div class="main-inner">
+            <div class="main-stage">
+              <div class="page-title">
+                <h2>View User</h2>
+                <div class="h-line"></div>
+              </div>
+              <div class="user-profile-top">
+                <div class="user-photo">
+                  <img src="../img/handsome-adult-male-posing7.jpg" alt="profile">
+                </div>
+                <div class="profile-details">
+                  <h2 class="name">John Doe</h2>
+                  <p>Mat No.:<span>36378</span></p>
+                  <p>Platoon<span>001</span></p>
+                  <p>Total Pints:<span>350 pt</span></p>
+                  <p>Status:<span>Active</span></p>
+                </div>
+                <div class="doc-action">
+                  <span class="material-symbols-outlined">edit</span>
+                  <span class="material-symbols-outlined">print</span>
+                  <span class="material-symbols-outlined">download</span>
+                </div>
+              </div>
+            </div>
+            <div class="space"></div>
+            <h2>Personal Information</h2>
+            <div class="main-stage">
+
+              <div class="user-profile-bottom">
+                <div class="user-profile-left">
+                  <p>Full Name:<span>John Doe Raw</span></p>
+                  <p>Gender:<span>Male</span></p>
+                  <p>Date Of Birth:<span>April 23 1989</span></p>
+                  <p>Blood Group:<span>O+</span></p>
+                  <p>Blood Genotype:<span>AA</span></p>
+                  <p>Email:<span>johndoe@mail.com</span></p>
+                  <p>Phone:<span>+234 803 584 1234</span></p>
+                </div>
+                <div class="user-profile-right">
+                  <p>Country:<span>Nigeria</span></p>
+                  <p>State:<span>Lagos</span></p>
+                  <p>LGA:<span>Ikeja</span></p>
+                  <p>Street Addrss:<span>121, Oba Akran Road</span></p>
+                  <p>Short BIO:<span>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer>
+          <p>© Copyrights Police College Ikeja 2023. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../js/index.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('.sub-btn').click(function () {
+          $(this).next('.sub-menu').slideToggle();
+          $(this).find('.dropdown').toggleClass('rotate');
+        });
+      });
+    </script>
+  </body>
+</html>

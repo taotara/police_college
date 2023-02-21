@@ -79,6 +79,10 @@ img {
   width: 100%;
 }
 
+.space {
+  height: 5rem;
+}
+
 h1 {
   font-weight: 800;
   font-size: 1.8rem;
@@ -594,6 +598,187 @@ footer {
   margin: 20px 0;
 }
 
+/* ---------- Add User ---------- */
+.main-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main-stage form .upload {
+  position: relative;
+  width: 120px;
+}
+
+.main-stage form .upload .round {
+  width: 32px;
+  height: 32px;
+  line-height: 33px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--color-primary);
+  overflow: hidden;
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.main-stage form .input-row {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 1.3rem 0;
+}
+
+.main-stage form .input-row .input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.main-stage form .input-row .input-group label span {
+  color: var(--color-danger);
+}
+
+.main-stage form .input-row .input-group input {
+  width: 100%;
+  height: 45px;
+  color: #a8a8a8;
+  background: #f4f3f6;
+  border: #e1e0ea 1px solid;
+  border-radius: 5px;
+  padding: 0 1rem;
+}
+
+.main-stage form .input-row .input-group select {
+  width: 100%;
+  height: 45px;
+  color: #a8a8a8;
+  background: #f4f3f6;
+  border: #e1e0ea 1px solid;
+  border-radius: 5px;
+  padding: 0 1rem;
+}
+
+.main-stage form .input-row .input-group textarea {
+  width: 100%;
+  height: 125px;
+  color: #a8a8a8;
+  background: #f4f3f6;
+  border: #e1e0ea 1px solid;
+  border-radius: 5px;
+  padding: 0 0rem;
+  text-align: left;
+}
+
+.main-stage form .input-row .btn-group {
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-stage form .input-row .btn-group .btn-primary {
+  height: 50px;
+  background: var(--color-primary);
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  color: white;
+}
+
+.main-stage form .input-row .btn-group .btn-secondary {
+  height: 50px;
+  background: var(--color-secondary);
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  color: white;
+}
+
+.main-stage form .upload .round span {
+  color: white;
+}
+
+.upload .round input[type='file'] {
+  position: absolute;
+  transform: scale(2);
+  opacity: 0;
+}
+
+.upload .round input[type='file']::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+/* ---------- View User ---------- */
+.main-inner .main-stage .user-profile-top {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+
+.main-inner .main-stage .user-profile-top .user-photo img {
+  width: 245px;
+  height: 245px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.main-inner .main-stage .user-profile-top .profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  justify-self: flex-start;
+}
+
+.main-inner .main-stage .user-profile-top .profile-details .name {
+  font-weight: 300;
+}
+
+.main-inner .main-stage .user-profile-top .profile-details p span {
+  color: var(--color-dark);
+  margin-left: 0.5rem;
+}
+
+.main-inner .main-stage .user-profile-top .doc-action {
+  position: absolute;
+  right: 0;
+}
+
+.main-inner .main-stage .user-profile-top .doc-action span {
+  background: #f1f5f9;
+  border-radius: 5px;
+  padding: 5px;
+  color: #717171;
+  cursor: pointer;
+}
+
+.main-inner .main-stage .user-profile-bottom {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.main-inner .main-stage .user-profile-bottom .user-profile-left,
+.main-inner .main-stage .user-profile-bottom .user-profile-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.main-inner .main-stage .user-profile-bottom p span {
+  display: inline-block;
+  max-width: 500px;
+  color: var(--color-dark);
+  margin-left: 0.5rem;
+}
+
 /* ---------Media queries--------- */
 /* ==========Tablets and small laptops========== */
 @media screen and (max-width: 1200px) {
@@ -686,15 +871,15 @@ footer {
     margin-left: 1rem;
   }
 
-  aside .top.logo h2 {
+  aside .logo h2 {
     display: inline;
   }
 
-  .sidebar .menu .item h3 {
+  aside .sidebar .menu .item h3 {
     display: inline;
   }
 
-  .sidebar .menu .item a {
+  aside .sidebar .menu .item a {
     width: 100%;
     height: 3.4rem;
     display: flex;
@@ -786,6 +971,19 @@ footer {
 
   main .right {
     display: flex;
+    flex-wrap: wrap;
+  }
+
+  .main-stage form .input-row {
+    flex-wrap: wrap;
+  }
+
+  .main-inner .main-stage .user-profile-top {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-inner .main-stage .user-profile-bottom {
     flex-wrap: wrap;
   }
 }
