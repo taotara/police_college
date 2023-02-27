@@ -14,11 +14,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/newstyle.css" />
   </head>
   <body>
@@ -44,28 +39,16 @@
               </a>
             </div>
             <div class="item">
-              <a class="sub-btn" href="#">
+              <a class="sub-btn" href="users.html">
                 <span class="material-symbols-sharp"> group </span>
                 <h3>Users</h3>
-                <i class="fas fa-angle-right dropdown"></i>
               </a>
-              <div class="sub-menu">
-                <a href="users.html" class="sub-item">User List</a>
-                <a href="view_user.html" class="sub-item">View Users</a>
-                <a href="add_user.html" class="sub-item">Add User</a>
-              </div>
             </div>
             <div class="item">
               <a class="sub-btn" href="#">
                 <span class="material-symbols-sharp"> military_tech </span>
                 <h3>Platoon</h3>
-                <i class="fas fa-angle-right dropdown"></i>
               </a>
-              <div class="sub-menu">
-                <a href="platoon_list" class="sub-item">Platoon List</a>
-                <a href="view_platoon" class="sub-item">View Platoon</a>
-                <a href="add_platoon.html" class="sub-item">Add Platoon</a>
-              </div>
             </div>
             <div class="item">
               <a href="#">
@@ -77,14 +60,7 @@
               <a class="sub-btn" href="#">
                 <span class="material-symbols-sharp"> mail </span>
                 <h3>Message</h3>
-                <i class="fas fa-angle-right dropdown"></i>
               </a>
-              <div class="sub-menu">
-                <a href="#" class="sub-item">Sub Item 01</a>
-                <a href="#" class="sub-item">Sub Item 02</a>
-                <a href="#" class="sub-item">Sub Item 03</a>
-                <a href="#" class="sub-item">Sub Item 04</a>
-              </div>
             </div>
             <div class="item">
               <a href="#">
@@ -198,6 +174,22 @@
                 <small class="text-muted">Last 24 Hours</small>
               </div>
             </div>
+
+            <!-- ---------- Charts ---------- -->
+            <div class="charts">
+              <!-- Bar chat -->
+              <div class="chart-card income-chart">
+                <div class="title"><h3>Income</h3></div>
+                <div id="bar-chart" class="chart"></div>
+              </div>
+              <!-- Donut chat -->
+              <div class="chart-card mfChart">
+                <div class="title"><h3>Male/Female Ratio</h3></div>
+                <div id="donut-chart" class="chart"></div>
+              </div>
+            </div>
+            <!-- ---------- End of Charts ---------- -->
+
             <div class="recent-users">
               <h2>Resent users</h2>
               <table>
@@ -382,64 +374,18 @@
           <!-- Right Panel -->
           <div class="right">
             <!-- Recent messages -->
-            <div class="recent-messages">
-              <h2>Recent Messages</h2>
-              <div class="messages">
-                <div class="message">
-                  <div>
-                    <img
-                      class="profile-photo"
-                      src="../img/handsome-adult-male-posing.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="message-content">
-                    <p>
-                      <b>Benson Ali</b> Took an early lead this morning after he
-                      swept the maximum...
-                    </p>
-                    <small class="text-muted">2 Minutes Ago</small>
-                  </div>
-                </div>
-                <div class="message">
-                  <div>
-                    <img
-                      class="profile-photo"
-                      src="../img/handsome-adult-male-posing3.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="message-content">
-                    <p>
-                      <b>Sgt Muda</b> Wants the following students to report to
-                      the parade ground at...
-                    </p>
-                    <small class="text-muted">5 Minutes Ago</small>
-                  </div>
-                </div>
-                <div class="message">
-                  <div>
-                    <img
-                      class="profile-photo"
-                      src="../img/handsome-adult-male-posing10.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="message-content">
-                    <p>
-                      <b>Jane Doe</b> is the new platoon 006 captain. The
-                      announcement was...
-                    </p>
-                    <small class="text-muted">2 Hours Ago</small>
-                  </div>
-                </div>
+            <div class="charts spaceL">
+              <!-- Pie chat -->
+              <div class="chart-card mfChart">
+                <div class="title"><h3>School Cert/Degree Holders</h3></div>
+                <div id="pie-chart" class="chart"></div>
               </div>
             </div>
             <!-- End of Recent messages -->
 
             <!-- Beginning of Top Students -->
             <div class="top-students">
-              <h2>Top Students</h2>
+              <h2>Students Attendance Monitor</h2>
               <div class="item">
                 <div class="top-students-left">
                   <img
@@ -556,15 +502,9 @@
       </div>
     </div>
 
-    <script src="../js/index.js"></script>
+    <!-- Apexchart script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.37.1/apexcharts.min.js"></script>
 
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('.sub-btn').click(function () {
-          $(this).next('.sub-menu').slideToggle();
-          $(this).find('.dropdown').toggleClass('rotate');
-        });
-      });
-    </script>
+    <script src="../js/index.js"></script>
   </body>
 </html>
