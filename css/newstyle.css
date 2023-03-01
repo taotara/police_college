@@ -489,6 +489,15 @@ main .left .recent-users a {
   color: var(--color-primary);
 }
 
+.action button {
+  background: transparent;
+  cursor: pointer;
+}
+
+.action button span {
+  color: var(--color-dark);
+}
+
 /* ----------Charts ---------- */
 .charts {
   display: flex;
@@ -544,18 +553,21 @@ main .left .recent-users a {
   margin-bottom: 1rem;
 }
 
-/* ---------- Top Students ---------- */
-.right .top-students {
+/* ---------- Attendance Monitor ---------- */
+.right .student-monitor {
   margin-top: 2rem;
+  width: 100%;
 }
 
-.right .top-students h2 {
+.right .student-monitor h2 {
   margin-bottom: 0.8rem;
 }
 
-.right .top-students .item {
+.right .student-monitor .item {
+  width: 100%;
   background: var(--color-white);
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.7rem;
@@ -565,46 +577,42 @@ main .left .recent-users a {
   transition: all 300ms ease;
 }
 
-.right .top-students .item:hover {
-  box-shadow: none;
-}
-
-.right .top-students .item .top-students-right {
+.right .student-monitor .item .student-monitor-top {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: start;
-  margin: 0;
+  align-items: center;
+}
+
+.right .student-monitor .item .student-monitor-bottom {
   width: 100%;
 }
 
-.right .top-students .item .top-stdents-right h5 {
+/* Progress Bar */
+.right .student-monitor .item .student-monitor-bottom .bar {
+  width: 100%;
+  height: 10px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.right .student-monitor .item .student-monitor-bottom .bar::before {
+  content: '';
   display: flex;
-  justify-items: center;
-  align-items: center;
-}
+  justify-content: end;
+  width: calc(var(--percent) * 1%);
+  height: 100%;
+  background: #2486ff;
+  white-space: nowrap;
 
-.right .top-students .add-points {
-  background-color: transparent;
-  border: 2px dashed var(--color-primary);
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.right .top-students .add-points:hover {
-  background: var(--color-primary);
-  color: white;
-}
-
-.right .top-students .add-points div {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.right .top-students .add-points div h3 {
-  font-weight: 600;
+  background-image: linear-gradient(red, red), linear-gradient(orange, orange),
+    linear-gradient(orchid, orchid), linear-gradient(lightblue, lightblue),
+    linear-gradient(green, green);
+  background-size: calc((var(--percent) - 80) * 100%) 100%,
+    calc((var(--percent) - 60) * 100%) 100%,
+    calc((var(--percent) - 40) * 100%) 100%,
+    calc((var(--percent) - 20) * 100%) 100%, 100% 100%;
+  border-radius: 10px;
 }
 
 /* Footer */
@@ -827,12 +835,14 @@ footer {
   display: flex;
   flex-direction: column;
 }
-.main-stageH form .upload {
+.main-stageH form .upload,
+.modal-body form .upload {
   position: relative;
   width: 120px;
 }
 
-.main-stageH form .upload .round {
+.main-stageH form .upload .round,
+.modal-body form .upload .round {
   width: 32px;
   height: 32px;
   line-height: 33px;
@@ -846,7 +856,8 @@ footer {
   border-radius: 50%;
 }
 
-.main-stageH form .input-row {
+.main-stageH form .input-row,
+.modal-body form .input-row {
   width: 100%;
   display: flex;
   gap: 2rem;
@@ -854,18 +865,21 @@ footer {
   margin: 1.3rem 0;
 }
 
-.main-stageH form .input-row .input-group {
+.main-stageH form .input-row .input-group,
+.modal-body form .input-row .input-group {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.main-stageH form .input-row .input-group label span {
+.main-stageH form .input-row .input-group label span,
+.modal-body form .input-row .input-group label span {
   color: var(--color-danger);
 }
 
-.main-stageH form .input-row .input-group input {
+.main-stageH form .input-row .input-group input,
+.modal-body form .input-row .input-group input {
   width: 100%;
   height: 45px;
   color: #a8a8a8;
@@ -875,7 +889,8 @@ footer {
   padding: 0 1rem;
 }
 
-.main-stageH form .input-row .input-group select {
+.main-stageH form .input-row .input-group select,
+.modal-body form .input-row .input-group select {
   width: 100%;
   height: 45px;
   color: #a8a8a8;
@@ -885,7 +900,8 @@ footer {
   padding: 0 1rem;
 }
 
-.main-stageH form .input-row .input-group textarea {
+.main-stageH form .input-row .input-group textarea,
+.modal-body form .input-row .input-group textarea {
   width: 100%;
   height: 125px;
   color: #a8a8a8;
@@ -896,13 +912,15 @@ footer {
   text-align: left;
 }
 
-.main-stageH form .input-row .btn-group {
+.main-stageH form .input-row .btn-group,
+.modal-body form .input-row .btn-group {
   width: 100%;
   display: flex;
   gap: 1.5rem;
 }
 
-.main-stageH form .input-row .btn-group .btn-primary {
+.main-stageH form .input-row .btn-group .btn-primary,
+.modal-body form .input-row .btn-group .btn-primary {
   height: 50px;
   background: var(--color-primary);
   padding: 15px 30px;
@@ -911,7 +929,8 @@ footer {
   color: white;
 }
 
-.main-stageH form .input-row .btn-group .btn-secondary {
+.main-stageH form .input-row .btn-group .btn-secondary,
+.modal-body form .input-row .btn-group .btn-secondary {
   height: 50px;
   background: var(--color-secondary);
   padding: 15px 30px;
@@ -920,7 +939,8 @@ footer {
   color: white;
 }
 
-.main-stageH form .upload .round span {
+.main-stageH form .upload .round span,
+.modal-body form .upload .round span {
   color: white;
 }
 
@@ -1027,23 +1047,6 @@ footer {
   position: relative;
 }
 
-/* .btn-box button:hover {
-  color: var(--color-primary);
-  font-weight: 500;
-  margin-right: calc(50px - 0.02rem);
-}
-
-.btn-box button:hover:before {
-  content: ' ';
-  width: 100%;
-  height: 5px;
-  background: var(--color-primary);
-  border-radius: 10px;
-  position: absolute;
-  bottom: -3px;
-  left: 1.2rem;
-} */
-
 .content {
   position: absolute;
   width: 96%;
@@ -1067,7 +1070,10 @@ footer {
   border-radius: var(--border-radius-3);
   z-index: 10;
   background-color: var(--color-white);
-  width: 70%;
+  width: fit-content;
+  max-width: 70%;
+  overflow-y: auto;
+  padding: 20px;
 }
 
 .modal.active {
@@ -1116,6 +1122,55 @@ footer {
 #overlay.active {
   opacity: 1;
   pointer-events: all;
+}
+
+.delete-user {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.delete-user-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.delete-user-btn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.delete-user-btn button:first-child {
+  background: var(--color-danger);
+}
+
+.delete-user-btn button:last-child {
+  background: var(--color-secondary);
+}
+
+.active-status span {
+  width: fit-content;
+  display: inline-block;
+  color: #364a31;
+  background: var(--color-success);
+  text-align: center;
+  border-radius: 50px;
+  padding: 5px 15px;
+}
+
+.pending-status span {
+  width: fit-content;
+  display: inline-block;
+  color: #364a31;
+  background: var(--color-warning);
+  text-align: center;
+  border-radius: 50px;
+  padding: 5px 15px;
 }
 
 /* ---------Media queries--------- */

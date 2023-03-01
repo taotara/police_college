@@ -1,9 +1,7 @@
-const sideMenu = document.querySelector('aside');
-const menuBtn = document.querySelector('#menu-btn');
-const closeBtn = document.querySelector('#close-btn');
+// Change Theme
+let darkMode = localStorage.getItem('darkMode');
 const themeToggler = document.querySelector('.theme-toggler');
 
-// Change Theme
 themeToggler.addEventListener('click', () => {
   document.body.classList.toggle('dark-theme-variables');
 
@@ -12,11 +10,16 @@ themeToggler.addEventListener('click', () => {
 });
 
 // Show Sidebar
+const sideMenu = document.querySelector('aside');
+const menuBtn = document.querySelector('#menu-btn');
+
 menuBtn.addEventListener('click', () => {
   sideMenu.style.display = 'block';
 });
 
 // Close Sidebar
+const closeBtn = document.querySelector('#close-btn');
+
 closeBtn.addEventListener('click', () => {
   sideMenu.style.display = 'none';
 });
@@ -151,7 +154,7 @@ var pieChartOptions = {
 
   series: [45, 50],
   labels: ['Degree', 'School Cert'],
-  colors: ['#383167', '#026606'],
+  colors: ['#FFD700', '#026606'],
 };
 
 var chart = new ApexCharts(
