@@ -87,9 +87,11 @@ var barChartOptions = {
       data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200],
     },
   ],
+  
   chart: {
     type: 'bar',
     height: 350,
+    width: '100%',
     toolbar: {
       show: false,
     },
@@ -115,6 +117,9 @@ var barChartOptions = {
       'October',
       'December',
     ],
+  },
+  fill: {
+    colors: ['#008FFB']
   },
 };
 

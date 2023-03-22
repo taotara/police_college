@@ -627,7 +627,6 @@ footer {
 /* ----------Login---------- */
 .containerL {
   width: 96%;
-  height: 100vh;
   margin: 0 auto;
 }
 
@@ -698,7 +697,7 @@ footer {
 
 .loginContainer .bottom h2 {
   font-size: 1.8rem;
-  background: var(--color-dark);
+  color: var(--color-dark);
   margin-bottom: 1rem;
 }
 
@@ -1173,6 +1172,8 @@ footer {
   border-radius: 50px;
   padding: 5px 15px;
 }
+
+
 
 /* ---------Media queries--------- */
 /* ==========Tablets and small laptops========== */
