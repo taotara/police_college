@@ -121,6 +121,21 @@ var barChartOptions = {
   fill: {
     colors: ['#008FFB']
   },
+  responsive: [
+    {
+      breakpoint: 768,
+      options: {
+        plotOptions: {
+          bar: {
+            horizontal: false
+          }
+        },
+        chart: {
+          width: 600
+        },
+      }
+    }
+  ]
 };
 
 var chart = new ApexCharts(
@@ -134,30 +149,13 @@ chart.render();
 var donutChartOptions = {
   chart: {
     type: 'donut',
-    height: '100%',
+    width: '100%',
   },
   legend: {
     show: true,
     position: 'bottom',
     verticalAlign: 'bottom',
   },
-
-  responsive: [
-    {
-      breakpoint: 1000,
-      options: {
-        plotOptions: {
-          bar: {
-            horizontal: false,
-          },
-        },
-        legend: {
-          position: 'bottom',
-        },
-      },
-    },
-  ],
-
   series: [45, 50],
   labels: ['Male', 'Female'],
   colors: ['#008FFB', '#F9A3A4'],
@@ -176,11 +174,6 @@ var pieChartOptions = {
     type: 'pie',
     width: '100%',
   },
-  legend: {
-    show: false,
-    position: 'bottom',
-  },
-
   legend: {
     show: true,
     position: 'bottom',

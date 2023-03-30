@@ -59,8 +59,6 @@ body {
   font-family: poppins, sans-serif;
   font-size: 0.88rem;
   background: var(--color-background);
-  /* user-select: none; */
-  /* overflow: hidden; */
   color: var(--color-dark);
   position: relative;
 }
@@ -374,7 +372,34 @@ header .top .profile {
   display: flex;
   gap: 2rem;
   text-align: right;
+  position: relative;
+  cursor: pointer;
 }
+
+header .top .profile .profile-dropdown-content{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  background: var(--color-white);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+  position: absolute;
+  top: 3rem;
+  border-radius: var(--border-radius-2);
+
+}
+
+header .top .profile .profile-dropdown-content a,
+header .top .profile .profile-dropdown-content span{
+  display: inline-block;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+header .top .profile .profile-dropdown-content a:hover{
+  background: grey;
+}
+
 
 /* ---- Header Bar ---- */
 main {
@@ -513,11 +538,11 @@ main .left .recent-users a {
 }
 
 .mfChart {
-  flex: 2;
+  flex: 1;
 }
 
 .income-chart {
-  flex: 3;
+  flex: 1;
 }
 
 .chart-card {
@@ -1400,5 +1425,9 @@ footer {
 
   .charts {
     flex-wrap: wrap;
+  }
+
+  .chart-card{
+    width: 100%;
   }
 }
